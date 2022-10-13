@@ -26,8 +26,8 @@ namespace cs_text_file_splitter
             InitializeComponent();
 
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-            ComboBoxEncoding.Items.Add(Encoding.GetEncoding("Shift-JIS"));
-            ComboBoxEncoding.Items.Add(Encoding.UTF8);
+            ComboBoxEncoding.Items.Add("Shift-JIS");
+            ComboBoxEncoding.Items.Add("UTF-8");
             ComboBoxEncoding.SelectedIndex = 0;
 
             EnableDragDrop(this);
@@ -64,7 +64,7 @@ namespace cs_text_file_splitter
 
             foreach (var path in paths)
             {
-                using (var reader = new StreamReader(path, ComboBoxEncoding.SelectedItem as Encoding))
+                using (var reader = new StreamReader(path, Encoding.GetEncoding(ComboBoxEncoding.SelectedItem as string)))
                 {
                     for (int fileCount = 0; ; fileCount++)
                     {
