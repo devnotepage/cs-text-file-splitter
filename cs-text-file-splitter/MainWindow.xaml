@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TextBox x:Name="TextBoxMaxLineCount" TextWrapping="Wrap" Text="10000" Margin="181,141,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="116"/>
+        <Label Content="分割行数" Margin="110,137,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <ComboBox x:Name="ComboBoxEncoding" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="181,167,0,0"/>
+        <Label Content="文字コード" HorizontalAlignment="Left" Margin="109,166,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
