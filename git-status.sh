@@ -1,2 +1,3 @@
 git status
-read
+
+read -p "Complete!"
