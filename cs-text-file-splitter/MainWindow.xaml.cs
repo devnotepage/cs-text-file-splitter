@@ -34,13 +34,13 @@ namespace cs_text_file_splitter
         }
         private void EnableDragDrop(Control control)
         {
-            //ドラッグ＆ドロップを受け付けられるようにする
+            //ドラッグ＆ドロップ許可
             control.AllowDrop = true;
 
-            //ドラッグが開始された時のイベント処理（マウスカーソルをドラッグ中のアイコンに変更）
+            //ドラッグ開始イベント
             control.PreviewDragOver += (s, e) =>
             {
-                //ファイルがドラッグされたとき、カーソルをドラッグ中のアイコンに変更し、そうでない場合は何もしない。
+                // カーソルをドラッグ中のアイコンに変更し、そうでない場合は何もしない。
                 e.Effects = (e.Data.GetDataPresent(DataFormats.FileDrop)) ? DragDropEffects.Copy : e.Effects = DragDropEffects.None;
                 e.Handled = true;
             };
